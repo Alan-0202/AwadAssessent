@@ -1,0 +1,51 @@
+<!-- Service Area -->
+<section class="service-area pt-100 pb-70" style="padding-bottom: 500px;">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Orders</h2>
+      <p class="margin-auto">Records of coins consumed</p>
+    </div>
+    <div class="row pt-45">
+      <div class="col-lg-12 col-md-12">
+        <div class="services-card">
+
+          <h1>Order List</h1>
+
+          <div style="height: 500px; overflow: auto">
+            <table>
+              <thead>
+              <tr>
+                <th>User</th>
+                <th>Info</th>
+                <th>Pay</th>
+                <th colspan="3"></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <% @purchases.each do |purchase| %>
+                <% if current_user.id == purchase.user_id %>
+                  <tr>
+                    <td><%= purchase.id %></td>
+                    <td><%= purchase.info %></td>
+                    <td><%= purchase.pay %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <br>
+
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- Service Area End -->

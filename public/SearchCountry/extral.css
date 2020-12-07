@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto Condensed';
+    background-color: #fafafa;
+}
+
+h1 {
+    margin: 150px auto;
+    max-width: 640px;
+    text-align: center;
+}
+
+#autocomplete {
+    max-width: 400px;
+    margin: 0 auto;
+}

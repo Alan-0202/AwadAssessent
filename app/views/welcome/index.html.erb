@@ -1,0 +1,129 @@
+
+
+
+<!-- Pricing Area -->
+<section class="pricing-area pt-100 pb-70 section-bg">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Pricing Plan</h2>
+      <p class="margin-auto">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </div>
+
+    <div class="row pt-45">
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card">
+          <div class="pricing-title">
+            <h2>Show Country Information</h2>
+            <span>You can see the position in GMap </span>
+          </div>
+          <div class="pricing-content">
+            <h3>Free</h3>
+            <div class="content">
+              <span>.00</span>
+              <p>Once</p>
+            </div>
+          </div>
+          <ul>
+            <li>Show Data <i class='bx bx-check icon-color'></i></li>
+            <li>Gmap <i class='bx bx-check icon-color'></i></li>
+            <li>Country Infomation <i class='bx bx-check icon-color'></i></li>
+            <li>Search <i class='bx bx-check icon-color'></i></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+          <div class="get-btn-area text-center">
+            <a href="/countries/" onclick="return confirm('It`s free, Continue?');" class="get-btn">Get It Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card">
+          <div class="pricing-title">
+            <h2>Best-seller DataSets </h2>
+            <span>You'll get a recent list of the best-selling books from 2009 to 2019 </span>
+          </div>
+          <div class="pricing-content">
+            <h3>1 </h3>
+            <div class="content">
+              <span>Coin</span>
+              <p>Permanent</p>
+            </div>
+          </div>
+          <ul>
+            <li>Show Data <i class='bx bx-check icon-color'></i></li>
+            <li>Table <i class='bx bx-check icon-color'></i></li>
+            <li>From amazon <i class='bx bx-check icon-color'></i></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+          <% if user_signed_in? %>
+          <% if current_user.account >= 1 %>
+          <div class="get-btn-area text-center">
+            <a href="/fictions" onclick="return confirm('Whether or not to buy?');" class="get-btn" id="purchase">Get It Now</a>
+          </div>
+            <% else %>
+            <div class="get-btn-area text-center">
+              <a href="/" onclick="return confirm('No Coins');" class="get-btn" id="purchase">Get It Now</a>
+            </div>
+            <% end %>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+        <div class="pricing-card">
+          <div class="pricing-title">
+            <h2>Movies DataSets</h2>
+            <span>More than 40,000 data were collected</span>
+          </div>
+          <div class="pricing-content">
+            <h3>2</h3>
+            <div class="content">
+              <span>Coin</span>
+              <p>Permanent</p>
+            </div>
+          </div>
+          <ul>
+            <li> <i class='bx bx-check icon-color'></i></li>
+            <li>Show Data <i class='bx bx-check icon-color'></i></li>
+            <li>Chart<i class='bx bx-check icon-color'></i></li>
+            <li>Analyse<i class='bx bx-check icon-color'></i></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+            <li><br></li>
+          </ul>
+          <% if user_signed_in? %>
+          <% if current_user.account >= 2 %>
+            <div class="get-btn-area text-center">
+              <a href="/movies"  onclick="return confirm('Whether or not to buy?');" class="get-btn">Get It Now</a>
+            </div>
+          <% else %>
+            <div class="get-btn-area text-center">
+              <a href="/"  onclick="return confirm('No Coins');" class="get-btn">Get It Now</a>
+            </div>
+          <% end %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Pricing Area End -->
+
+<script>
+
+
+
+
+
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DataService</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+<!--    haed for the all-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/bootstrap.min.css">
+    <!-- Animate Min CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/animate.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/fonts/flaticon.css">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/boxicons.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/magnific-popup.css">
+    <!-- Owl Carousel Min CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/owl.theme.default.min.css">
+    <!-- Nice Select Min CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/nice-select.min.css">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/meanmenu.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/bootstrapTemp/assets/css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/bootstrapTemp/assets/img/favicon.png">
+
+    <title>Durel - Domain & Hosting Agency HTML Template</title>
+<!--    end-->
+
+<!--    for echarts-->
+    <script src="/bootstrapTemp/assets/js/echarts.js"></script>
+<!--    end-->
+  </head>
+
+  <body>
+
+
+
+
+<%# if devise_controller? %>
+  <%#= render 'layouts/devise' %>
+
+  <%# else %>
+
+<!--navbar-->
+    <%= render template: 'layouts/navbar' %>
+
+<!--end-->
+    <%= yield %>
+
+    <%# end %>
+  </body>
+</html>

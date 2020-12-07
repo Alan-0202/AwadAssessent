@@ -1,0 +1,114 @@
+
+
+
+<!-- Service Area -->
+<section class="service-area pt-100 pb-70 ">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Best-selling books</h2>
+      <p class="margin-auto">Article 550 the data</p>
+    </div>
+    <div class="row pt-45">
+      <div class="col-lg-12 col-md-12">
+        <div class="services-card">
+
+          <h1>Fictions</h1>
+
+<div style="height: 500px; overflow: auto">
+          <table class="table table-bordered table-hover" style="height: 500px">
+            <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Author</th>
+              <th scope="col">Reviews</th>
+              <th scope="col">Price</th>
+              <th scope="col">Year</th>
+              <th colspan="3"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @fictions.each do |fiction| %>
+              <tr>
+                <td><%= fiction.id %></td>
+                <td><%= fiction.name %></td>
+                <td><%= fiction.author %></td>
+                <td><%= fiction.reviews %></td>
+                <td><%= fiction.price %></td>
+                <td><%= fiction.year %></td>
+                <td><%= link_to 'Show', fiction %></td>
+                <td><%= link_to 'Edit', edit_fiction_path(fiction) %></td>
+                <td><%= link_to 'Destroy', fiction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+</div>
+          <br>
+
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- Service Area End -->
+
+<!-- Service Area -->
+<section class="service-area pt-100 pb-70" style="padding-bottom: 500px;">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Best-selling books</h2>
+      <p class="margin-auto">The relationship between the number of readers and the price of all the books.Can reflect whether the number of reads is related to the price (the price is not sorted by size)</p>
+    </div>
+    <div class="row pt-45">
+      <div class="col-lg-12 col-md-12">
+        <div class="services-card">
+
+          <h1>Fictions</h1>
+
+          <div style="height: 500px; overflow: auto">
+            <div id="main_fiction" style="width: 100%; height: 500px"></div>
+          </div>
+          <br>
+
+
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- Service Area End -->
+
+
+<script>
+    var myChart = echarts.init(document.getElementById('main_fiction'));
+    var readnum = <%= raw @fictionread %>;
+    var price = <%= raw @fictionprice %>
+    option = {
+        xAxis: {
+            type: 'category',
+            data: price,
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: readnum,
+            type: 'bar'
+        }]
+    };
+    myChart.setOption(option);
+
+</script>

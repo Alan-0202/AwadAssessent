@@ -1,0 +1,65 @@
+<!-- Service Area -->
+<section class="service-area pt-100 pb-70" style="padding-bottom: 300px;">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2><%= @country.name %></h2>
+      <p class="margin-auto">Show the Country position in GMap</p>
+    </div>
+    <div class="row pt-45">
+      <div class="col-lg-12 col-md-12">
+        <div class="services-card">
+
+          <!--Gmap script-->
+
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaS-Gogamnwls5O8bLH-W6JksIHVefOGQ&callback=initMap&libraries=&v=weekly"
+            defer
+          ></script>
+          <script>
+              // This example displays a marker at the center of Australia.
+              // When the user clicks the marker, an info window opens.
+              function initMap() {
+                  const uluru = { lat: <%= @country.la %>, lng: <%= @country.lo %> };
+                  const map = new google.maps.Map(document.getElementById("map"), {
+                      zoom: 6,
+                      center: uluru,
+                  });
+                  const contentString =
+                      '<div id="content">' +
+                      '<div id="siteNotice">' +
+                      "</div>" +
+                      '<h1 id="firstHeading" class="firstHeading">' + "<%= @country.name %>" + '</h1>' +
+                      '<div id="bodyContent">' +
+                      "<p>Carbon dioxide emissions in 2008: <b>"+ "<%= @country.name %>" +"</b></p>" +
+                      "<p>Carbon dioxide emissions in 2010: <b>"+ "<%= @country.name %>" +"</b></p>" +
+                      "<p>GDP in 2008: <b>"+ "<%= @country.name %>" +"</b></p>" +
+                      "<p>GDP in 2010: <b>"+ "<%= @country.name %>" +"</b></p>" +
+                      "</div>" +
+                      "</div>";
+                  const infowindow = new google.maps.InfoWindow({
+                      content: contentString,
+                  });
+                  const marker = new google.maps.Marker({
+                      position: uluru,
+                      map,
+                      title: "Uluru (Ayers Rock)",
+                  });
+                  marker.addListener("click", () => {
+                      infowindow.open(map, marker);
+                  });
+              }
+          </script>
+
+          <!--Gmap script-->
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- Service Area End -->
