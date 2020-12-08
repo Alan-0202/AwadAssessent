@@ -1,6 +1,5 @@
 class CreateMovies < ActiveRecord::Migration[6.0]
   def change
-    drop_table :movies
     create_table :movies do |t|
       t.string :homepage
       t.string :overview
